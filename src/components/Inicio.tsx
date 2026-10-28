@@ -1,0 +1,61 @@
+// Meses en New Jahs contando junio de 2026 como el primero, para que no quede desactualizado.
+function mesesDesdeJunio2026(hoy = new Date()) {
+  return (hoy.getFullYear() - 2026) * 12 + hoy.getMonth() - 5 + 1
+}
+
+const enlace = 'underline decoration-2 underline-offset-4 decoration-rule hover:decoration-line'
+
+export function Inicio() {
+  const meses = mesesDesdeJunio2026()
+
+  return (
+    <section id="inicio" className="mx-auto grid max-w-7xl gap-10 px-gutter py-section md:min-h-[calc(100svh-5.5rem)] md:grid-cols-[1fr_auto] md:items-end">
+      <div>
+        <h1 className="text-station font-extrabold text-balance">Juan David Martínez Niño</h1>
+        <p className="mt-5 inline-block bg-line px-3 py-1 text-lg font-bold text-line-ink">(Software Developer)</p>
+
+        <p className="mt-8 max-w-[46ch] text-lg text-muted">
+          Desarrollador de software orientado al backend. Construyo el backend de New Jahs con Node.js,
+          TypeScript y TypeORM desde junio de 2026 ({meses} {meses === 1 ? 'mes' : 'meses'}).
+        </p>
+
+        <div className="mt-10 border-t-2 border-rule pt-5">
+          <h2 className="text-sm font-semibold text-muted">Conexiones</h2>
+          <ul className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-4 font-semibold">
+            <li>
+              <a
+                href="mailto:juandavidmn0819@gmail.com"
+                className="inline-block bg-line px-5 py-3 text-line-ink hover:bg-ink"
+              >
+                Escríbeme
+              </a>
+            </li>
+            <li>
+              <a className={enlace} href="https://www.linkedin.com/in/juan-david-mart%C3%ADnez-ni%C3%B1o-879b89323/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a className={enlace} href="https://github.com/Juand12348" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a className={enlace} href="/cv/CV_Juan_David_Martinez_Nino.pdf" download>
+                Descargar CV (PDF)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <img
+        src="/images/foto-perfil-900.jpg"
+        alt="Retrato de Juan David Martínez Niño"
+        width={900}
+        height={1195}
+        className="aspect-[3/4] w-full max-w-52 border-2 border-rule bg-panel object-cover object-top md:w-80 md:max-w-none"
+      />
+    </section>
+  )
+}

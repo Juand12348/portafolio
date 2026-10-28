@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/overpass';
+
+/* Tokens propios: se borra la paleta por defecto de Tailwind para que solo existan estos colores. */
+@theme {
+  --color-*: initial;
+  --color-ground: #0f1317; /* panel de señalética */
+  --color-panel: #1d242b;
+  --color-rule: #2e3740;
+  --color-ink: #eef0f2;
+  --color-muted: #a3adb8;
+  --color-line: #f2b705; /* la línea amarilla */
+  --color-line-ink: #1a1400; /* texto sobre amarillo */
+
+  --font-*: initial;
+  --font-sign: 'Overpass Variable', 'Segoe UI', sans-serif;
+
+  --spacing-gutter: clamp(1rem, 4vw, 3rem);
+  --spacing-section: clamp(3rem, 8vw, 6rem);
+
+  --text-station: clamp(2.5rem, 7.2vw, 6rem);
+  --text-station--line-height: 0.95;
+  --text-station--letter-spacing: -0.025em;
+  --text-sign: clamp(2rem, 5vw, 3.5rem); /* nombre de cada sección */
+  --text-sign--line-height: 1;
+  --text-sign--letter-spacing: -0.02em;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-rule) var(--color-ground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-ground text-ink font-sign antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  /* que la línea fija no tape el encabezado al saltar a una estación */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background: var(--color-line);
+    color: var(--color-line-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-line);
+    outline-offset: 3px;
+  }
+}
