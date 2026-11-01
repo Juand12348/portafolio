@@ -1,38 +1,47 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/overpass';
+@import '@fontsource-variable/schibsted-grotesk';
 
 /* Tokens propios: se borra la paleta por defecto de Tailwind para que solo existan estos colores. */
 @theme {
   --color-*: initial;
-  --color-ground: #0f1317; /* panel de señalética */
-  --color-panel: #1d242b;
-  --color-rule: #2e3740;
-  --color-ink: #eef0f2;
-  --color-muted: #a3adb8;
-  --color-line: #f2b705; /* la línea amarilla */
-  --color-line-ink: #1a1400; /* texto sobre amarillo */
+  --color-noche: #0b1220; /* fondo */
+  --color-plano: #111b2e; /* superficies y capas del diagrama */
+  --color-trazo: #22314d; /* solo líneas decorativas (1.4:1); nunca bordes de controles */
+  --color-tiza: #e6edf7; /* texto principal, 15.9:1 */
+  --color-niebla: #9fb0c8; /* texto secundario, 8.5:1 */
+  --color-cobalto: #4f8cff; /* acción, enlaces, foco y núcleo del diagrama, 5.8:1 */
+  --color-senal: #3ddc97; /* solo estados: en desarrollo, en curso, pendiente */
 
   --font-*: initial;
-  --font-sign: 'Overpass Variable', 'Segoe UI', sans-serif;
+  --font-sans: 'Schibsted Grotesk Variable', 'Segoe UI', sans-serif;
 
   --spacing-gutter: clamp(1rem, 4vw, 3rem);
-  --spacing-section: clamp(3rem, 8vw, 6rem);
+  --spacing-section: clamp(4rem, 10vw, 8rem);
 
-  --text-station: clamp(2.5rem, 7.2vw, 6rem);
-  --text-station--line-height: 0.95;
-  --text-station--letter-spacing: -0.025em;
-  --text-sign: clamp(2rem, 5vw, 3.5rem); /* nombre de cada sección */
-  --text-sign--line-height: 1;
-  --text-sign--letter-spacing: -0.02em;
+  --text-hero: clamp(2.75rem, 7vw, 5.75rem); /* nombre del inicio */
+  --text-hero--line-height: 0.95;
+  --text-hero--letter-spacing: -0.035em;
+  --text-titulo: clamp(2rem, 4.5vw, 3.25rem); /* título de cada sección */
+  --text-titulo--line-height: 1.05;
+  --text-titulo--letter-spacing: -0.025em;
+
+  --radius-capa: 10px;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes desplegar {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
 }
 
 @layer base {
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
-    scrollbar-color: var(--color-rule) var(--color-ground);
+    scrollbar-color: var(--color-trazo) var(--color-noche);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -42,23 +51,25 @@
   }
 
   body {
-    @apply bg-ground text-ink font-sign antialiased;
+    @apply bg-noche text-tiza font-sans antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
+    caret-color: var(--color-cobalto);
   }
 
-  /* que la línea fija no tape el encabezado al saltar a una estación */
+  /* que la navegación fija no tape el encabezado al saltar a una sección */
   section[id] {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 5rem;
   }
 
   ::selection {
-    background: var(--color-line);
-    color: var(--color-line-ink);
+    background: var(--color-cobalto);
+    color: var(--color-noche);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-line);
+    outline: 2px solid var(--color-cobalto);
     outline-offset: 3px;
+    border-radius: 4px;
   }
 }

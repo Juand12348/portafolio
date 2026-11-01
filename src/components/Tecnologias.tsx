@@ -21,28 +21,28 @@ const practicas = [
 export function Tecnologias() {
   return (
     <section id="tecnologias" className="mx-auto max-w-7xl px-gutter py-section">
-      <h2 className="text-sign font-extrabold">Tecnologías</h2>
+      <h2 className="text-titulo font-extrabold">Tecnologías</h2>
 
-      <div className="mt-10 border-t-4 border-line pt-6">
-        <h3 className="text-sm font-semibold text-muted">Uso diario</h3>
+      <div className="mt-10 border-t-4 border-cobalto pt-6">
+        <h3 className="text-sm font-semibold text-niebla">Uso diario</h3>
         <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-[clamp(1.75rem,4vw,3rem)] leading-tight font-bold">
           <li>Node.js</li>
           <li>TypeScript</li>
           <li>TypeORM</li>
           <li>Jest</li>
         </ul>
-        <p className="mt-4 max-w-[60ch] text-muted">Es el entorno con el que construí el backend de New Jahs, y donde me especializo.</p>
+        <p className="mt-4 max-w-[60ch] text-niebla">Es el entorno con el que construí el backend de New Jahs, y donde me especializo.</p>
       </div>
 
       <dl className="mt-14">
         {areas.map(({ area, items }) => (
-          <div key={area} className="grid gap-2 border-t-2 border-rule py-4 md:grid-cols-[16rem_1fr] md:gap-8">
-            <dt className="font-semibold text-muted">{area}</dt>
+          <div key={area} className="grid gap-2 border-t-2 border-trazo py-4 md:grid-cols-[16rem_1fr] md:gap-8">
+            <dt className="font-semibold text-niebla">{area}</dt>
             <dd className="flex flex-wrap gap-x-7 gap-y-1">
               {items.map(([nombre, nivel]) => (
                 <span key={nombre} className="font-semibold">
                   {nombre}
-                  {nivel && <span className="ml-2 text-sm font-normal text-muted">{nivel}</span>}
+                  {nivel && <span className="ml-2 text-sm font-normal text-niebla">{nivel}</span>}
                 </span>
               ))}
             </dd>
@@ -53,9 +53,9 @@ export function Tecnologias() {
       <h3 className="mt-section text-[clamp(1.5rem,3vw,2rem)] font-extrabold">Cómo construyo software</h3>
       <dl className="mt-6 grid gap-x-12 md:grid-cols-2">
         {practicas.map(([nombre, frase]) => (
-          <div key={nombre} className="border-t-2 border-rule py-5">
+          <div key={nombre} className="border-t-2 border-trazo py-5">
             <dt className="font-bold">{nombre}</dt>
-            <dd className="mt-1 max-w-[52ch] text-muted">{frase}</dd>
+            <dd className="mt-1 max-w-[52ch] text-niebla">{frase}</dd>
           </div>
         ))}
       </dl>

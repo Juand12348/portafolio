@@ -28,8 +28,8 @@ export function NewJahs() {
 
   return (
     <section id="new-jahs" className="mx-auto max-w-7xl px-gutter py-section">
-      <h2 className="text-sign font-extrabold">New Jahs</h2>
-      <p className="mt-3 text-sm font-semibold text-muted">
+      <h2 className="text-titulo font-extrabold">New Jahs</h2>
+      <p className="mt-3 text-sm font-semibold text-niebla">
         Desde junio de 2026 ({meses} {meses === 1 ? 'mes' : 'meses'}) · en desarrollo · yo hice el backend
       </p>
 
@@ -43,25 +43,25 @@ export function NewJahs() {
         href="https://new-jahs-frontend.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 inline-block bg-line px-5 py-3 font-semibold text-line-ink hover:bg-ink"
+        className="mt-8 inline-block bg-cobalto px-5 py-3 font-semibold text-noche hover:bg-tiza"
       >
         Ver New Jahs<span className="sr-only"> (abre en pestaña nueva)</span> ↗
       </a>
 
       <dl className="mt-14 grid gap-x-12 md:grid-cols-3">
         {piezas.map(([nombre, frase]) => (
-          <div key={nombre} className="border-t-4 border-line py-5">
+          <div key={nombre} className="border-t-4 border-cobalto py-5">
             <dt className="font-bold">{nombre}</dt>
-            <dd className="mt-1 text-muted">{frase}</dd>
+            <dd className="mt-1 text-niebla">{frase}</dd>
           </div>
         ))}
       </dl>
 
       <h3 className="mt-section text-[clamp(1.5rem,3vw,2rem)] font-extrabold">Sprints</h3>
-      <p className="mt-2 text-muted">
+      <p className="mt-2 text-niebla">
         {terminados} de {sprints.length} terminados.
       </p>
-      <ol className="mt-8 ml-[9px] border-l-4 border-line pl-6">
+      <ol className="mt-8 ml-[9px] border-l-4 border-cobalto pl-6">
         {sprints.map(([nombre, frase], i) => {
           const hecho = i < terminados
           return (
@@ -69,13 +69,13 @@ export function NewJahs() {
               {/* parada: llena = terminado, hueca = pendiente */}
               <span
                 aria-hidden
-                className={`absolute top-1.5 -left-[calc(1.5rem+11px)] size-[18px] rounded-full border-[3px] border-line ${hecho ? 'bg-line' : 'bg-ground'}`}
+                className={`absolute top-1.5 -left-[calc(1.5rem+11px)] size-[18px] rounded-full border-[3px] border-cobalto ${hecho ? 'bg-cobalto' : 'bg-noche'}`}
               />
-              <p className={`text-sm font-semibold ${hecho ? 'text-muted' : 'text-line'}`}>
+              <p className={`text-sm font-semibold ${hecho ? 'text-niebla' : 'text-cobalto'}`}>
                 Sprint {i + 1} · {hecho ? 'terminado' : 'pendiente'}
               </p>
               <h4 className="mt-1 text-xl font-bold">{nombre}</h4>
-              <p className="max-w-[60ch] text-muted">{frase}</p>
+              <p className="max-w-[60ch] text-niebla">{frase}</p>
             </li>
           )
         })}
@@ -83,8 +83,8 @@ export function NewJahs() {
 
       <dl className="mt-section">
         {stack.map(([nombre, valor]) => (
-          <div key={nombre} className="grid gap-2 border-t-2 border-rule py-4 md:grid-cols-[16rem_1fr] md:gap-8">
-            <dt className="font-semibold text-muted">{nombre}</dt>
+          <div key={nombre} className="grid gap-2 border-t-2 border-trazo py-4 md:grid-cols-[16rem_1fr] md:gap-8">
+            <dt className="font-semibold text-niebla">{nombre}</dt>
             <dd className="font-semibold">{valor}</dd>
           </div>
         ))}

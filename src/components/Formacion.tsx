@@ -28,7 +28,7 @@ function Parada({ hecha }: { hecha: boolean }) {
   return (
     <span
       aria-hidden
-      className={`absolute top-1.5 -left-[calc(1.5rem+11px)] size-[18px] rounded-full border-[3px] border-line ${hecha ? 'bg-line' : 'bg-ground'}`}
+      className={`absolute top-1.5 -left-[calc(1.5rem+11px)] size-[18px] rounded-full border-[3px] border-cobalto ${hecha ? 'bg-cobalto' : 'bg-noche'}`}
     />
   )
 }
@@ -36,22 +36,22 @@ function Parada({ hecha }: { hecha: boolean }) {
 export function Formacion() {
   return (
     <section id="formacion" className="mx-auto max-w-7xl px-gutter py-section">
-      <h2 className="text-sign font-extrabold">Formación</h2>
+      <h2 className="text-titulo font-extrabold">Formación</h2>
 
-      <ol className="mt-10 ml-[9px] border-l-4 border-line pl-6">
+      <ol className="mt-10 ml-[9px] border-l-4 border-cobalto pl-6">
         {cursos.map(({ nombre, instructor, fecha, duracion, url }) => (
           <li key={url} className="relative pb-10">
             <Parada hecha />
-            <p className="text-sm font-semibold text-muted">
+            <p className="text-sm font-semibold text-niebla">
               {fecha} · Udemy · {duracion}
             </p>
             <h3 className="mt-1 max-w-[40ch] text-xl font-bold">{nombre}</h3>
-            <p className="text-muted">{instructor}</p>
+            <p className="text-niebla">{instructor}</p>
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block font-semibold text-line underline-offset-4 hover:underline"
+              className="mt-2 inline-block font-semibold text-cobalto underline-offset-4 hover:underline"
             >
               Verificar certificado<span className="sr-only"> de {nombre} en Udemy (abre en pestaña nueva)</span> ↗
             </a>
@@ -59,9 +59,9 @@ export function Formacion() {
         ))}
         <li className="relative">
           <Parada hecha={false} />
-          <p className="text-sm font-semibold text-line">En curso · último semestre</p>
+          <p className="text-sm font-semibold text-cobalto">En curso · último semestre</p>
           <h3 className="mt-1 max-w-[40ch] text-xl font-bold">Tecnología en Desarrollo de Software</h3>
-          <p className="text-muted">Uniagustiniana · desde 2024</p>
+          <p className="text-niebla">Uniagustiniana · desde 2024</p>
         </li>
       </ol>
     </section>
