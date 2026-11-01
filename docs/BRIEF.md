@@ -39,14 +39,8 @@ Notas:
 - **Backend:** Spring Boot, Node.js, NestJS
 - **Datos / ORM:** MySQL, PostgreSQL, TypeORM
 - **Pruebas y despliegue:** Jest, Docker
-- **Plataformas de despliegue:** Railway y Neon (las que más maneja, usadas en New Jahs); también Vercel y Render
 
-Qué usa a diario y qué conoce menos (confirmado por él):
-- **Fuerte, uso diario:** Node.js, TypeScript, TypeORM y Jest — el entorno con el que construyó el backend de New Jahs. Se especializa en **backend**.
-- **Maneja bien:** Java.
-- **Nivel básico:** Spring Boot, C++ y el frontend (HTML, CSS, React).
-
- No mostrar porcentajes ni barras de nivel; es mejor agrupar por área y, si se puede, ligar cada tecnología a algo que haya construido.
+Qué usa a diario y qué conoce menos: **[confirmar]**. No mostrar porcentajes ni barras de nivel; es mejor agrupar por área y, si se puede, ligar cada tecnología a algo que haya construido.
 
 ### Arquitectura y buenas prácticas (que él maneja)
 - **Arquitectura limpia** (Clean Architecture)
@@ -65,27 +59,24 @@ Es el único proyecto por ahora, y **sigue en desarrollo**. Contarlo como un cas
   1. **Ecommerce**, para que la empresa entre al mercado electrónico.
   2. **Inventario**, para ordenar el stock.
   3. **Chatbot asistente disponible 24/7** para clientes, administradores y empleados.
-- **Inicio del proyecto: junio de 2026** (corregido por él; antes decía julio por error). Mostrar "desde junio de 2026" y calcular la duración a partir de esa fecha, para que no quede desactualizada.
-- **Experiencia:** experiencia en backend calculada desde junio de 2026 (cuadra con los "5 meses" que él pidió a finales de octubre). Usar la fecha de inicio, no un número fijo. Redactarlo ligado a New Jahs, no como empleo.
-- **Qué hizo él:** **solo el backend.** El frontend (con Tailwind CSS) no lo hizo él; no atribuírselo.
-- **Despliegue de New Jahs:** backend y Redis en **Railway**, base de datos PostgreSQL en **Neon**, frontend en **Vercel**.
-- **Stack de New Jahs (confirmado por él):** Node.js, TypeScript, PostgreSQL, TypeORM, Jest y Groq AI (para el chatbot).
-- **Librerías del backend** (de su `package.json`): Express, JSON Web Token (`jsonwebtoken`), bcryptjs, CORS, ioredis (Redis), Multer, Nodemailer, uuid; pruebas con Jest, ts-jest y Supertest; calidad con ESLint y Prettier; desarrollo con ts-node / ts-node-dev.
+- **Inicio del proyecto: julio de 2026** (dicho por él). Mostrar "desde julio de 2026" y calcular la duración a partir de esa fecha, para que no quede desactualizada.
+- **Experiencia:** él pidió decir "5 meses de experiencia en backend" con este proyecto, pero desde julio a finales de octubre de 2026 son unos 4 meses. **[confirmar]** si cuenta desde antes de julio (por ejemplo, planeación) o si quiere otra redacción. Hasta resolverlo, usar la fecha de inicio y no un número fijo. Redactarlo ligado a New Jahs, no como empleo.
+- ORM: **TypeORM** (confirmado). Resto del stack: **[confirmar]**.
 - **Enlace al proyecto:** https://new-jahs-frontend.vercel.app/ — botón o enlace visible en la tarjeta del proyecto, que abra en pestaña nueva (`target="_blank"` con `rel="noopener noreferrer"`). El título de la pestaña dice "new-jahs-frontend" porque aún no se configura el dominio propio; es aceptable por ahora.
 - **No mencionar** WhatsApp, Wompi ni otros detalles de integraciones. Solo lo listado arriba.
-- **Sin capturas de la app** (decisión de él): solo el enlace a New Jahs. El nombre ya es público en su póster.
-- **Feria:** presentó el proyecto en el **Encuentro de Investigadores de la Red de Programas de Ingeniería de Sistemas y Afines (REDIS) 2026**, categoría Semillero, por la Uniagustiniana, con el póster "Desarrollo de una Aplicación web para New Jahs" (Tecnología en Desarrollo de Software). Nombre del evento confirmado por él.
-- En la foto de la feria aparecen **dos personas**; la otra persona **está de acuerdo** (confirmado por él), así que puede usarse completa.
+- Permiso del cliente para mostrar nombre y capturas: **[confirmar]**. El nombre ya es público en su póster, pero las capturas conviene validarlas.
+- **Feria:** presentó el proyecto en el **Encuentro Académico REDIS 2026**, categoría Semillero, por la Uniagustiniana, con el póster "Desarrollo de una Aplicación web para New Jahs" (Tecnología en Desarrollo de Software). Datos leídos de la foto del póster. **[confirmar nombre exacto del evento]**.
+- En la foto de la feria aparecen **dos personas**. Si va en el sitio, que la otra persona esté de acuerdo o recortar la imagen. **[confirmar]**
 - El póster describe a New Jahs como una MiPyme de producción y venta de ropa para hombre, especialmente camisas.
 
 ### Sprints (metodología Scrumban)
-La metodología que usó es **Scrumban** (el póster de la feria dice SCRUM, pero él aclaró que fue Scrumban; usar Scrumban en el sitio). Según él, el proyecto está organizado en 6 sprints. El póster parece listar 7, pero usar los 6 que él escribió. **Sprints 1 a 5 terminados; el sprint 6 está pendiente** (confirmado por él). No presentar el 6 como hecho.
+La metodología que usó es **Scrumban** (el póster de la feria dice SCRUM, pero él aclaró que fue Scrumban; usar Scrumban en el sitio). Según él, el proyecto está organizado en 6 sprints. El póster parece listar 7, pero usar los 6 que él escribió. **[confirmar cuáles están terminados]**; no presentar como hecho lo que aún no lo está.
 1. **Análisis y diseño:** requerimientos con el cliente, arquitectura, modelado de base de datos, wireframes y prototipo navegable, entorno de desarrollo, y contratos de las APIs.
 2. **Autenticación, usuarios y catálogo:** JWT, roles con RBAC (minorista, mayorista, empleado, administrador), productos y categorías con tallas y colores, catálogo con filtros, búsqueda y detalle.
 3. **Carrito, pedidos, checkout y pagos:** flujo de pedidos, bus de eventos para descontar stock al confirmar un pedido, checkout con pasarela de pagos (sin nombrar la pasarela).
 4. **Inventario extendido y movimientos:** stock por referencia, talla y color, panel de administración, movimientos (entradas, salidas, ajustes) con historial de auditoría.
 5. **Chatbot con IA y dashboard:** capa de agregación para reportes, chatbot con modelo de lenguaje (LLM) sobre productos e inventario, proyección básica de demanda, gráficas de ventas por periodo y de reabastecimiento sugerido.
-6. **[Pendiente] Integración, pruebas y despliegue:** integración de módulos, pruebas funcionales, de integración y de regresión, corrección de errores, despliegue a producción y validación con el usuario.
+6. **Integración, pruebas y despliegue:** integración de módulos, pruebas funcionales, de integración y de regresión, corrección de errores, despliegue a producción y validación con el usuario.
 
 Estructura sugerida del caso de estudio: problema → qué construyó él → decisiones técnicas (con los sprints) → estado actual → qué sigue. Nada de métricas inventadas.
 
@@ -96,12 +87,12 @@ Estructura sugerida del caso de estudio: problema → qué construyó él → de
 - GitHub: https://github.com/Juand12348
 - LinkedIn: https://www.linkedin.com/in/juan-david-mart%C3%ADnez-ni%C3%B1o-879b89323/
 - Correo de contacto: juandavidmn0819@gmail.com
-- **Botón de descarga del CV** (PDF): `public/cv/CV_Juan_David_Martinez_Nino.pdf` (versión actualizada, una página). Incluye teléfono (3102225646, ya actualizado por él) y ciudad; se publica así.
+- **Botón de descarga del CV** (PDF): `public/cv/CV_Juan_David_Martinez_Nino.pdf` (versión actualizada, una página). El PDF incluye teléfono y ciudad; **[confirmar]** si prefiere una versión pública sin teléfono.
 - **Foto personal:** retrato con fondo claro y sudadera negra, recomendable para la sección de inicio o "Sobre mí". Guardar como `public/images/foto-perfil.jpg`.
 
 ## 5. Secciones propuestas (a discutir en el brainstorming)
 
-1. **Inicio:** nombre completo, "(Software Developer)", una línea de qué hace, el dato de experiencia en backend (desde junio de 2026, ver sección 3), botones de CV y contacto.
+1. **Inicio:** nombre completo, "(Software Developer)", una línea de qué hace, el dato de experiencia en backend (ver sección 3, pendiente de confirmar), botones de CV y contacto.
 2. **Sobre mí:** historia corta, con un toque del gym y la tecnología.
 3. **Tecnologías y práctica:** tecnologías agrupadas por área, más el bloque de arquitectura y buenas prácticas.
 4. **Proyecto:** New Jahs como caso de estudio, con enlace al sitio.
@@ -114,30 +105,37 @@ Estructura sugerida del caso de estudio: problema → qué construyó él → de
 
 Ejemplo dado por él: en una lista desplegable, el ícono de abrir/cerrar en vez de un "+" puede ser una **mancuerna**.
 
-Candidatos (elegir pocos, máximo 4 o 5):
-- Ícono de mancuerna como control de acordeones.
-- Formación presentada como bitácora de entrenamiento ("sobrecarga progresiva": cada curso, un paso más).
-- Numeración de secciones como "series" (Set 01, Set 02) **[opcional]**.
-- Pie de página "Ahora mismo": qué está aprendiendo.
-- Paleta de comandos con `Ctrl + K` para navegar **[opcional]**.
-- Página 404 o indicador de carga con un guiño discreto.
+La guía de diseño (`docs/DISENO.md`) pide gastar la audacia en un solo sitio y dejar lo demás sobrio. Por eso, **propuesta: máximo 3 guiños** **[confirmar]**:
+- Ícono de **mancuerna** (SVG, nunca emoji) como control de abrir/cerrar en los acordeones.
+- **Formación como bitácora de entrenamiento** ("sobrecarga progresiva": cada curso, un paso más). Aquí sí tiene sentido numerar tipo "serie", porque es una secuencia cronológica real.
+- Pie de página **"Ahora mismo"**: qué está aprendiendo.
+
+Dejados fuera por ahora (la guía los marca como adorno o señal de plantilla): numerar todas las secciones como "Set 01, Set 02", paleta de comandos `Ctrl + K` y una 404 temática. Se pueden retomar si sobra tiempo.
 
 ## 7. Referencia visual
 
 - Le gusta la línea de https://jesusflorez.cloud/portfolio/ como guía de cómo se manejan hoy los portafolios.
 - **No debe quedar parecido**: la idea es algo propio. Solo se pudo leer el título y que usa una base oscura (`#131312`); el resto no se pudo ver. Pedirle capturas o que nombre qué le gusta de ella **[pendiente]**.
-- Dirección de color, tipografía y modo claro/oscuro: **[definir en el brainstorming]**
+- **Rediseño completo (1 nov 2026).** La primera versión (fondo casi negro + un solo acento amarillo + titular grande) le pareció genérica. Nueva dirección dada por él: **tema oscuro con azules y enfoque en tecnología**.
+- Ojo: "oscuro + un acento" es una de las señales de página genérica de `docs/DISENO.md`. Evitarlo usando una **escala de azules con papeles distintos** (base, superficie, línea, acento, texto) y **un solo momento memorable** derivado del contenido real (por ejemplo, un diagrama de capas de arquitectura limpia), no un degradado ni neón decorativo.
+- Paleta inicial de partida (**a ajustar en el plan visual**; contrastes ya medidos): tinta `#0b1220` (fondo), superficie `#111b2e`, línea `#22314d` (solo decorativa, 1.4:1; los bordes de componentes interactivos necesitan ≥ 3:1), texto `#e6edf7` (15.9:1), texto secundario `#9fb0c8` (8.5:1), azul principal `#4f8cff` (5.8:1), azul hielo `#9ec5ff` (10.6:1), verde de estado `#3ddc97` (10.6:1, solo para "activo / en desarrollo").
+- Tipografía y layout: **[definir en el plan visual]**. No usar Syne ni DM Sans de la guía.
+- Candidato de dirección para el momento memorable: **capas de arquitectura** (dominio, aplicación, infraestructura), porque es lo que él domina. La alternativa "planilla de entrenamiento" queda como detalle secundario. **[confirmar]**
+- **No copiar la paleta ni las tipografías** de la guía de diseño (sección 14, son de otro portafolio) ni las del portafolio de referencia.
 
 ## 8. Requisitos técnicos
 
 - React + TypeScript + Vite (ya creado en la carpeta `portafolio`).
-- Estilos: **Tailwind CSS** (confirmado). Colores, tipografías y espaciados como **tokens propios** definidos a partir de PRODUCT.md y la dirección visual; **no usar la paleta por defecto de Tailwind tal cual**.
+- Estilos: **Tailwind CSS con tokens propios** como variables CSS (recomendado; **[confirmar]**).
+- Reglas de diseño, accesibilidad y verificación: `docs/DISENO.md`.
 - Responsive y accesible (contraste, teclado, `prefers-reduced-motion`).
 - Rendimiento cuidado: pocas dependencias, imágenes optimizadas.
-- Despliegue del portafolio: **Vercel** (confirmado).
+- Despliegue: **Vercel** (elegido por él), conectando el repositorio de GitHub.
 
 ### Dónde va cada archivo
 - `docs/BRIEF.md`: este documento. Es contexto para Claude Code; no se publica en el sitio.
+- `docs/DISENO.md`: reglas de diseño adaptadas (versión corta de la guía maestra). Se lee siempre.
+- `docs/referencia/guia-maestra-diseno-web.pdf`: la guía completa de 40 páginas. **No cargarla entera**; consultar solo la sección que haga falta (índice en la página 1).
 - `public/`: lo que el sitio sirve tal cual: `public/cv/CV_Juan_David_Martinez_Nino.pdf`, `public/images/foto-perfil.jpg` y, si va, `public/images/feria-redis-2026.jpg`.
 - Certificados: enlazar a la URL de verificación de Udemy. Si además quiere ofrecer el PDF, va en `public/certificados/`.
 

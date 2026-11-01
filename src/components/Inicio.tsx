@@ -1,7 +1,4 @@
-// Meses en New Jahs contando junio de 2026 como el primero, para que no quede desactualizado.
-function mesesDesdeJunio2026(hoy = new Date()) {
-  return (hoy.getFullYear() - 2026) * 12 + hoy.getMonth() - 5 + 1
-}
+import { mesesDesdeJunio2026 } from '../fechas'
 
 const enlace = 'underline decoration-2 underline-offset-4 decoration-rule hover:decoration-line'
 

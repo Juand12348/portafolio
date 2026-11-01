@@ -1,6 +1,6 @@
 # PROGRESS — Portafolio de Juan David Martínez Niño
 
-Última actualización: 27 de octubre de 2026.
+Última actualización: 1 de noviembre de 2026.
 
 ## Qué hicimos
 
@@ -11,6 +11,9 @@
 5. **Línea de navegación** (`src/components/Linea.tsx`): las 5 estaciones, fija arriba al hacer scroll, con "Estás aquí" que sigue a la sección visible.
 6. **Sección Tecnologías** (`src/components/Tecnologias.tsx`): uso diario, tecnologías por área con nivel solo donde está confirmado y el bloque "Cómo construyo software".
 7. **Foto optimizada**: `public/images/foto-perfil-900.jpg` (70 KB) a partir de la original de 8 MB.
+8. **Sección Formación** (`src/components/Formacion.tsx`): los 3 cursos de Udemy como paradas llenas en orden cronológico, con enlace de verificación, y la carrera como última parada hueca ("en curso").
+9. **Sección New Jahs** (`src/components/NewJahs.tsx`): problema, enlace al sitio, las 3 piezas, los 6 sprints en la línea (1–5 llenos, 6 hueco), stack y despliegue. El cálculo de meses vive en `src/fechas.ts`.
+10. **Sección Eventos** (`src/components/Eventos.tsx`): REDIS 2026 con la foto optimizada `public/images/feria-redis-2026-1600.jpg` (190 KB).
 
 ## Decisiones tomadas por Juan David
 
@@ -46,14 +49,13 @@ Nota: no nombrar un token de espaciado `block`; choca con la clase `inline-block
 
 - **Revisar textos propuestos por Claude** (cámbialos con tus palabras):
   - la frase de presentación del inicio;
-  - las 7 frases de "Cómo construyo software".
+  - las 7 frases de "Cómo construyo software";
+  - los textos de New Jahs (problema, piezas y sprints) y la frase de Eventos.
 - **Niveles sin confirmar:** JavaScript, NestJS, MySQL, PostgreSQL, Docker.
-- **Secciones por construir:** Formación, New Jahs, Eventos.
 - **Detalles de gym** (máx. 4–5, sutiles): por ejemplo la mancuerna como control de desplegables.
-- **Foto original de 8 MB** sigue en `public/images/foto-perfil.jpg` y se copia al build; sacarla de `public/` o borrarla.
+- **Originales pesados en `public/`**: `foto-perfil.jpg` (8 MB) y `feria-redis-2026.jpg` (1,3 MB) se copian al build sin usarse; sacarlos o borrarlos.
 - **Cierre del proyecto:** revisión final del diseño (`impeccable-finish-reviewer`), `DESIGN.md` y despliegue en Vercel.
-- **Git:** nada está commiteado todavía.
 
 ## Siguiente paso
 
-Construir la sección **Formación**: Tecnología en Desarrollo de Software (Uniagustiniana, último semestre, sin fecha de grado) y los 3 cursos de Udemy como paradas de la línea, en orden cronológico, con fecha del certificado, duración y enlace de verificación en pestaña nueva.
+Revisar los textos propuestos, limpiar los originales pesados de `public/` y cerrar: revisión final del diseño, `DESIGN.md` y despliegue en Vercel.
