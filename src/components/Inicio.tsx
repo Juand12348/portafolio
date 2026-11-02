@@ -1,58 +1,94 @@
 import { mesesDesdeJunio2026 } from '../fechas'
+import { Diagrama } from './Diagrama'
 
-const enlace = 'underline decoration-2 underline-offset-4 decoration-trazo hover:decoration-cobalto'
+// Subrayado que se dibuja de izquierda a derecha al pasar el mouse.
+const enlace =
+  'relative font-semibold after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-cobalto hover:after:scale-x-100 motion-safe:after:transition-transform motion-safe:after:duration-500 motion-safe:after:ease-out-expo'
+
+const boton = 'inline-flex min-h-12 items-center rounded-md px-5 font-semibold motion-safe:transition-[background-color,color,translate] motion-safe:duration-300 active:translate-y-px'
+
+// Cada línea del nombre sube desde detrás de su propio borde.
+function Linea({ texto, retraso }: { texto: string; retraso: number }) {
+  return (
+    <span className="block overflow-hidden pb-[0.08em]">
+      <span
+        className="block motion-safe:animate-[subir_1s_var(--ease-out-expo)_both]"
+        style={{ animationDelay: `${retraso}ms` }}
+      >
+        {texto}
+      </span>
+    </span>
+  )
+}
 
 export function Inicio() {
   const meses = mesesDesdeJunio2026()
 
   return (
-    <section id="inicio" className="mx-auto grid max-w-7xl gap-10 px-gutter py-section md:min-h-[calc(100svh-5.5rem)] md:grid-cols-[1fr_auto] md:items-end">
+    <section
+      id="inicio"
+      className="mx-auto grid max-w-7xl items-center gap-x-16 gap-y-14 px-gutter py-section lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]"
+    >
       <div>
-        <h1 className="text-hero font-extrabold text-balance">Juan David Martínez Niño</h1>
-        <p className="mt-5 inline-block bg-cobalto px-3 py-1 text-lg font-bold text-noche">(Software Developer)</p>
+        <img
+          src="/images/foto-perfil-900.webp"
+          alt="Retrato de Juan David Martínez Niño"
+          width={900}
+          height={1195}
+          className="size-20 rounded-full border-2 border-cobalto bg-plano object-cover object-top motion-safe:animate-[aparecer_700ms_var(--ease-out-expo)_both] sm:size-24"
+        />
 
-        <p className="mt-8 max-w-[46ch] text-lg text-niebla">
+        <h1 className="mt-6 text-hero font-extrabold">
+          <Linea texto="Juan David" retraso={100} />
+          <Linea texto="Martínez Niño" retraso={220} />
+        </h1>
+        <p
+          className="mt-3 text-2xl font-bold text-cobalto motion-safe:animate-[aparecer_700ms_var(--ease-out-expo)_both]"
+          style={{ animationDelay: '450ms' }}
+        >
+          (Software Developer)
+        </p>
+
+        <p
+          className="mt-6 max-w-[46ch] text-lg text-niebla motion-safe:animate-[aparecer_700ms_var(--ease-out-expo)_both]"
+          style={{ animationDelay: '550ms' }}
+        >
           Desarrollador de software orientado al backend. Construyo el backend de New Jahs con Node.js,
           TypeScript y TypeORM desde junio de 2026 ({meses} {meses === 1 ? 'mes' : 'meses'}).
         </p>
 
-        <div className="mt-10 border-t-2 border-trazo pt-5">
-          <h2 className="text-sm font-semibold text-niebla">Conexiones</h2>
-          <ul className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-4 font-semibold">
-            <li>
-              <a
-                href="mailto:juandavidmn0819@gmail.com"
-                className="inline-block bg-cobalto px-5 py-3 text-noche hover:bg-tiza"
-              >
-                Escríbeme
-              </a>
-            </li>
-            <li>
-              <a className={enlace} href="https://www.linkedin.com/in/juan-david-mart%C3%ADnez-ni%C3%B1o-879b89323/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a className={enlace} href="https://github.com/Juand12348" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a className={enlace} href="/cv/CV_Juan_David_Martinez_Nino.pdf" download>
-                Descargar CV (PDF)
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul
+          className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 motion-safe:animate-[aparecer_700ms_var(--ease-out-expo)_both]"
+          style={{ animationDelay: '650ms' }}
+        >
+          <li>
+            <a href="mailto:juandavidmn0819@gmail.com" className={`${boton} bg-cobalto text-noche hover:bg-tiza`}>
+              Escríbeme
+            </a>
+          </li>
+          <li>
+            <a
+              href="/cv/CV_Juan_David_Martinez_Nino.pdf"
+              download
+              className={`${boton} border border-cobalto hover:bg-cobalto hover:text-noche`}
+            >
+              Descargar CV
+            </a>
+          </li>
+          <li>
+            <a className={enlace} href="https://www.linkedin.com/in/juan-david-mart%C3%ADnez-ni%C3%B1o-879b89323/" target="_blank" rel="noopener noreferrer">
+              LinkedIn<span className="sr-only"> (abre en pestaña nueva)</span>
+            </a>
+          </li>
+          <li>
+            <a className={enlace} href="https://github.com/Juand12348" target="_blank" rel="noopener noreferrer">
+              GitHub<span className="sr-only"> (abre en pestaña nueva)</span>
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <img
-        src="/images/foto-perfil-900.jpg"
-        alt="Retrato de Juan David Martínez Niño"
-        width={900}
-        height={1195}
-        className="aspect-[3/4] w-full max-w-52 border-2 border-trazo bg-plano object-cover object-top md:w-80 md:max-w-none"
-      />
+      <Diagrama />
     </section>
   )
 }

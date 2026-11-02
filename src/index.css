@@ -37,6 +37,49 @@
   }
 }
 
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+}
+
+@keyframes subir {
+  from {
+    transform: translateY(105%);
+  }
+}
+
+/* capas del diagrama: entran desenfocadas y se asientan */
+@keyframes armar {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(6px);
+  }
+}
+
+/* flechas de dependencia: bajan hacia la capa interna */
+@keyframes fluir {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(-1px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+}
+
+/* Cuadrícula de plano técnico: tenue en toda la página y en Cobalto alrededor del mouse. */
+@utility cuadricula {
+  background-image:
+    linear-gradient(to right, var(--c) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--c) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
 @layer base {
   html {
     color-scheme: dark;

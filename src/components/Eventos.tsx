@@ -14,7 +14,7 @@ export function Eventos() {
         </p>
 
         <img
-          src="/images/feria-redis-2026-1600.jpg"
+          src="/images/feria-redis-2026-1600.webp"
           alt="Dos estudiantes junto al póster «Desarrollo de una Aplicación web para New Jahs» en el encuentro REDIS 2026, con un portátil que muestra la aplicación."
           width={1600}
           height={720}
