@@ -2,60 +2,68 @@
 
 Última actualización: 1 de noviembre de 2026.
 
-## Qué hicimos
+## Dónde estamos
 
-1. **Contexto de producto** (`/impeccable init`): se creó `PRODUCT.md` con los datos confirmados y se actualizó `docs/BRIEF.md`.
-2. **Plan del inicio** (`/impeccable shape inicio`): se eligió la dirección visual y se registró su contrato en `.impeccable/surfaces/src-app-tsx.md`.
-3. **Base técnica**: Tailwind CSS v4 (`@tailwindcss/vite`) y la fuente Overpass (`@fontsource-variable/overpass`), con tokens propios en `src/index.css`. Se borraron los archivos de la plantilla de Vite.
-4. **Sección Inicio** (`src/components/Inicio.tsx`): nombre, "(Software Developer)", frase de presentación con los meses en New Jahs calculados solos, contacto (correo, LinkedIn, GitHub, CV) y foto.
-5. **Línea de navegación** (`src/components/Linea.tsx`): las 5 estaciones, fija arriba al hacer scroll, con "Estás aquí" que sigue a la sección visible.
-6. **Sección Tecnologías** (`src/components/Tecnologias.tsx`): uso diario, tecnologías por área con nivel solo donde está confirmado y el bloque "Cómo construyo software".
-7. **Foto optimizada**: `public/images/foto-perfil-900.jpg` (70 KB) a partir de la original de 8 MB.
-8. **Sección Formación** (`src/components/Formacion.tsx`): los 3 cursos de Udemy como paradas llenas en orden cronológico, con enlace de verificación, y la carrera como última parada hueca ("en curso").
-9. **Sección New Jahs** (`src/components/NewJahs.tsx`): problema, enlace al sitio, las 3 piezas, los 6 sprints en la línea (1–5 llenos, 6 hueco), stack y despliegue. El cálculo de meses vive en `src/fechas.ts`.
-10. **Sección Eventos** (`src/components/Eventos.tsx`): REDIS 2026 con la foto optimizada `public/images/feria-redis-2026-1600.jpg` (190 KB).
+**Rediseño completo en curso**, en la rama `feat/rediseno` (sale de `feat/inicio-y-tecnologias`). La primera versión ("Señalética de línea", amarillo sobre casi negro) le pareció genérica; la nueva dirección es **"Plano de arquitectura"**: tema oscuro con azules, enfoque en tecnología y **una app muy dinámica** (decisión de él).
 
-## Decisiones tomadas por Juan David
+| Fase | Estado | Commit |
+|---|---|---|
+| 1. Tokens azules, Schibsted Grotesk, navegación, landmarks | Hecha | `384f28d` |
+| 2. Inicio con diagrama de capas + anillo Cobalto + cuadrícula | Hecha | `64cb8b3` |
+| 3. Tecnologías con logos interactivos + revelado al hacer scroll | Hecha | `d8b2492` |
+| 4. Formación como línea de tiempo central | Hecha | `826927b` |
+| 5. New Jahs | **Siguiente** | — |
+| 6. Eventos (barra horizontal) y pie de página | Pendiente: falta decidir contenido | — |
 
-- **Estilos:** Tailwind CSS con colores, tipografías y espaciados como tokens propios; nunca la paleta por defecto de Tailwind.
-- **Despliegue del portafolio:** Vercel.
-- **Estilo visual:** base oscura, limpio y sobrio, que no parezca plantilla. Dirección elegida: **Señalética de línea** (el sitio es una línea de metro; cada sección es una estación).
-- **Orden de secciones:** Inicio (sobre + contacto) → Tecnologías → Formación → New Jahs → Eventos (REDIS).
-- **Foto de perfil** en el inicio.
-- **New Jahs:** empezó en **junio de 2026**; metodología **Scrumban**; sprints 1–5 terminados y el 6 pendiente; él hizo **solo el backend** (el frontend con Tailwind no es suyo); **sin capturas**, solo el enlace.
-- **Stack de New Jahs:** Node.js, TypeScript, PostgreSQL, TypeORM, Jest y Groq AI; despliegue en Railway (backend y Redis), Neon (base de datos) y Vercel (frontend).
-- **Nivel en tecnologías:** fuerte en Node.js, TypeScript, TypeORM y Jest; maneja bien Java; básico en Spring Boot, C++ y frontend. Plataformas: Railway y Neon (las que más maneja), también Vercel y Render.
-- **Evento:** Encuentro de Investigadores de la Red de Programas de Ingeniería de Sistemas y Afines (REDIS) 2026; la otra persona de la foto está de acuerdo.
-- **CV:** se publica con el teléfono 3102225646 (ya actualizado).
+Cada fase se verifica con `npm run build`, lint y capturas a 375, 768, 1024 y 1440 px (sin scroll horizontal, sin errores de consola ni 404). El script de capturas usa `playwright-core` instalado **fuera** del proyecto (carpeta temporal) y el Chrome del equipo.
 
-## Tokens del sistema (en `src/index.css`)
+## Pendiente de respuesta de Juan David
+
+1. **Eventos como barra horizontal (tipo Netflix/ecommerce):** hoy solo hay 1 evento y 1 foto. Opciones: (A) pasar más fotos de REDIS, (B) dejar la barra lista para crecer con 2 elementos hoy, (C) usar la barra en los 6 sprints de New Jahs y dejar Eventos como tarjeta grande.
+2. **Nombres de las entidades** en el diagrama: se escribieron como identificadores (`productos-variante`, `pedidos-item`…; "productso" se corrigió). Confirmar que así se llaman en su código.
+3. **Nombre en el inicio:** a 1024 y 1440 px "Martínez / Niño" se parte en dos líneas. ¿Se queda o se achica?
+4. **Guiños de gym** (máx. 3, sin confirmar): mancuerna SVG en desplegables, Formación como bitácora ("Serie 1, 2, 3"), pie "Ahora mismo" (¿qué está aprendiendo?).
+
+## Sistema del rediseño (en `src/index.css`)
 
 | Token | Valor | Uso |
 |---|---|---|
-| `ground` | `#0f1317` | fondo |
-| `panel` | `#1d242b` | superficies, foto sin cargar |
-| `rule` | `#2e3740` | reglas de 2 px |
-| `ink` | `#eef0f2` | texto principal |
-| `muted` | `#a3adb8` | texto secundario |
-| `line` | `#f2b705` | la línea amarilla, botón principal |
-| `line-ink` | `#1a1400` | texto sobre amarillo |
-| `font-sign` | Overpass Variable | toda la tipografía |
-| `gutter` / `section` | espaciados fluidos | márgenes laterales / entre secciones |
-| `text-station` / `text-sign` | tamaños fluidos | nombre del inicio / título de sección |
+| `noche` | `#0b1220` | fondo |
+| `plano` | `#111b2e` | superficies, tarjetas, capas del diagrama |
+| `trazo` | `#22314d` | solo líneas decorativas (1.4:1); nunca bordes de controles |
+| `tiza` | `#e6edf7` | texto principal (15.9:1) |
+| `niebla` | `#9fb0c8` | texto secundario (8.5:1) |
+| `cobalto` | `#4f8cff` | acción, enlaces, foco, núcleo del diagrama (5.8:1) |
+| `senal` | `#3ddc97` | **solo estados**: en desarrollo, en curso, pendiente |
+| `font-sans` | Schibsted Grotesk Variable (Fontsource) | toda la tipografía |
+| `text-hero` / `text-titulo` | tamaños fluidos | nombre del inicio / título de sección |
+| `rounded-capa` | 10 px | tarjetas y capas |
 
-Nota: no nombrar un token de espaciado `block`; choca con la clase `inline-block` de Tailwind.
+Movimiento: `ease-out-expo`; keyframes `aparecer`, `subir`, `armar`, `fluir`, `desplegar`. Todo lo marcado con `data-revelar` aparece una vez al entrar en pantalla (`useRevelar` en `App.tsx`; `--retraso` y `--revelar-desde` lo ajustan). Todo se apaga con `prefers-reduced-motion`.
 
-## Qué falta
+Piezas: `Navegacion.tsx` (barra que se desliza + menú bajo 1024 px), `Puntero.tsx` (anillo Cobalto, solo con mouse; mueve `--px/--py` para la cuadrícula iluminada), `Diagrama.tsx` (Infraestructura > Aplicación > Dominio con las 9 entidades), `IconoExterno.tsx`, logos de `simple-icons` (Java usa OpenJDK porque Oracle no permite el oficial).
 
-- **Revisar textos propuestos por Claude** (cámbialos con tus palabras):
-  - la frase de presentación del inicio;
-  - las 7 frases de "Cómo construyo software";
-  - los textos de New Jahs (problema, piezas y sprints) y la frase de Eventos.
+## Decisiones tomadas por Juan David
+
+- **Rediseño (1 nov 2026):** tema oscuro con azules, enfoque en tecnología; paleta aprobada; Fontsource se mantiene; diagrama de capas en el **inicio**; la app debe ser **muy dinámica** (registrado en `docs/DISENO.md`); puntero: **anillo Cobalto**.
+- **Tecnologías:** contenedores con el logo de cada tecnología, interactivos.
+- **Formación:** línea de tiempo en el centro que aparece al hacer scroll.
+- **Entidades del dominio de New Jahs:** usuarios, categorias, productos, productos-variante, pedidos, pedidos-item, shipment, payment, movimientos-inventario.
+- **Estilos:** Tailwind CSS con tokens propios; nunca la paleta por defecto de Tailwind.
+- **Despliegue del portafolio:** Vercel.
+- **Orden de secciones:** Inicio → Tecnologías → Formación → New Jahs → Eventos (REDIS).
+- **New Jahs:** desde **junio de 2026**; **Scrumban**; sprints 1–5 terminados y el 6 pendiente; él hizo **solo el backend**; **sin capturas**, solo el enlace. Stack: Node.js, TypeScript, PostgreSQL, TypeORM, Jest y Groq AI; despliegue en Railway (backend y Redis), Neon (base de datos) y Vercel (frontend).
+- **Nivel en tecnologías:** fuerte en Node.js, TypeScript, TypeORM y Jest; maneja bien Java; básico en Spring Boot, C++ y frontend.
+- **Evento:** REDIS 2026; la otra persona de la foto está de acuerdo.
+- **CV:** se publica con el teléfono 3102225646.
+
+## Qué falta además
+
+- **Revisar textos propuestos por Claude:** frase del inicio, textos de cada capa del diagrama, las 7 frases de "Cómo construyo software", textos de New Jahs y la frase de Eventos.
 - **Niveles sin confirmar:** JavaScript, NestJS, MySQL, PostgreSQL, Docker.
-- **Detalles de gym** (máx. 4–5, sutiles): por ejemplo la mancuerna como control de desplegables.
-- **Originales pesados en `public/`**: `foto-perfil.jpg` (8 MB) y `feria-redis-2026.jpg` (1,3 MB) se copian al build sin usarse; sacarlos o borrarlos.
-- **Cierre del proyecto:** revisión final del diseño (`impeccable-finish-reviewer`), `DESIGN.md` y despliegue en Vercel.
+- **Originales pesados en `public/`:** `foto-perfil.jpg` (8 MB, sin commitear) y `feria-redis-2026.jpg` (1,3 MB) ya no se usan (el sitio usa las versiones WebP) pero se copian al build; pedir permiso para borrarlos o moverlos.
+- **Cierre:** crítica de diseño y accesibilidad, quitar un elemento, `DESIGN.md`, tokens en el README, Lighthouse, merge y despliegue en Vercel.
 
 ## Siguiente paso
 
-Revisar los textos propuestos, limpiar los originales pesados de `public/` y cerrar: revisión final del diseño, `DESIGN.md` y despliegue en Vercel.
+**Fase 5: New Jahs** con el estilo nuevo (revelado al hacer scroll, sprints animados) y resolver la pregunta de Eventos antes de la Fase 6.
