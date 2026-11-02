@@ -72,6 +72,25 @@
   }
 }
 
+/* Revelado al hacer scroll: App marca data-visible una sola vez. Sin animación, todo queda visible. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-revelar] {
+    opacity: 0;
+    transform: translateY(2rem);
+    filter: blur(6px);
+    transition:
+      opacity 0.9s var(--ease-out-expo),
+      transform 0.9s var(--ease-out-expo),
+      filter 0.9s var(--ease-out-expo);
+    transition-delay: var(--retraso, 0ms);
+  }
+  [data-revelar][data-visible] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
 /* Cuadrícula de plano técnico: tenue en toda la página y en Cobalto alrededor del mouse. */
 @utility cuadricula {
   background-image:

@@ -30,7 +30,7 @@ La guía es **referencia de diseño**, no un flujo aparte: el orden de trabajo l
 
 - Partir del tema real (software backend, gym, New Jahs) y del contenido real del brief.
 - **Gastar la audacia en un solo sitio.** Un elemento memorable; todo lo demás, sobrio y disciplinado.
-- **Un solo momento orquestado de movimiento** (por ejemplo, la entrada del hero). El movimiento que responde a una acción (abrir, expandir) sí es bienvenido.
+- **Movimiento (decisión de Juan David, 1 nov 2026): la app debe ser muy dinámica.** Se permiten muchas animaciones, pero cada una sale del contenido de su sección (no el mismo fade en todo), solo `transform`, `opacity` y `filter`, y todas se apagan con `prefers-reduced-motion`. Puntero: anillo Cobalto que sigue al mouse (solo con mouse).
 - Titulares de menos de ~80 caracteres. No resaltar una sola palabra del titular.
 - Numerar (01/02/03) solo si es una secuencia real (pasos, línea de tiempo).
 - Antes de entregar, **quitar un elemento**.

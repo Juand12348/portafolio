@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Eventos } from './components/Eventos'
 import { Formacion } from './components/Formacion'
 import { Inicio } from './components/Inicio'
@@ -6,7 +7,27 @@ import { NewJahs } from './components/NewJahs'
 import { Puntero } from './components/Puntero'
 import { Tecnologias } from './components/Tecnologias'
 
+// Cada [data-revelar] aparece la primera vez que entra en pantalla, y se queda.
+function useRevelar() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entradas) => {
+        for (const e of entradas) {
+          if (!e.isIntersecting) continue
+          e.target.setAttribute('data-visible', '')
+          observer.unobserve(e.target)
+        }
+      },
+      { rootMargin: '0px 0px -12% 0px' },
+    )
+    document.querySelectorAll('[data-revelar]').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+}
+
 function App() {
+  useRevelar()
+
   return (
     <>
       <div aria-hidden className="cuadricula pointer-events-none fixed inset-0 -z-10 [--c:color-mix(in_oklab,var(--color-trazo)_55%,transparent)]" />
