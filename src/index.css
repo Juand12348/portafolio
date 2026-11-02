@@ -76,7 +76,7 @@
 @media (prefers-reduced-motion: no-preference) {
   [data-revelar] {
     opacity: 0;
-    transform: translateY(2rem);
+    transform: var(--revelar-desde, translateY(2rem));
     filter: blur(6px);
     transition:
       opacity 0.9s var(--ease-out-expo),
