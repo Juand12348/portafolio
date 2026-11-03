@@ -6,7 +6,7 @@ type Capa = 'infraestructura' | 'aplicacion' | 'dominio'
 const capas: Record<Capa, { nombre: string; piezas: string[]; explicacion: string }> = {
   infraestructura: {
     nombre: 'Infraestructura',
-    piezas: ['Express', 'TypeORM + PostgreSQL', 'Redis', 'Groq AI', 'Nodemailer', 'JWT'],
+    piezas: ['Express', 'TypeORM + PostgreSQL', 'Redis', 'Groq AI', 'Resend', 'JWT'],
     explicacion:
       'Los adaptadores hacia afuera: HTTP, base de datos, caché, IA y correo. Se pueden cambiar sin tocar el dominio.',
   },

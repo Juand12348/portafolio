@@ -19,7 +19,7 @@ Cada fase se verifica con `npm run build`, lint y capturas a 375, 768, 1024 y 14
 
 ## Pendiente de respuesta de Juan David
 
-1. **Eventos como barra horizontal (tipo Netflix/ecommerce):** hoy solo hay 1 evento y 1 foto. Opciones: (A) pasar más fotos de REDIS, (B) dejar la barra lista para crecer con 2 elementos hoy, (C) usar la barra en los 6 sprints de New Jahs y dejar Eventos como tarjeta grande.
+1. ~~Eventos como barra horizontal~~ **Resuelto (3 nov 2026):** fila horizontal tipo Netflix con 1 tarjeta (REDIS); cada evento nuevo se agrega al arreglo `eventos` en `Eventos.tsx`.
 2. **Nombres de las entidades** en el diagrama: se escribieron como identificadores (`productos-variante`, `pedidos-item`…; "productso" se corrigió). Confirmar que así se llaman en su código.
 3. **Nombre en el inicio:** a 1024 y 1440 px "Martínez / Niño" se parte en dos líneas. ¿Se queda o se achica?
 4. **Guiños de gym** (máx. 3, sin confirmar): mancuerna SVG en desplegables, Formación como bitácora ("Serie 1, 2, 3"), pie "Ahora mismo" (¿qué está aprendiendo?).
@@ -55,6 +55,8 @@ Piezas: `Navegacion.tsx` (barra que se desliza + menú bajo 1024 px), `Puntero.t
 - **New Jahs:** desde **junio de 2026**; **Scrumban**; sprints 1–5 terminados y el 6 pendiente; él hizo **solo el backend**; **sin capturas**, solo el enlace. Stack: Node.js, TypeScript, PostgreSQL, TypeORM, Jest y Groq AI; despliegue en Railway (backend y Redis), Neon (base de datos) y Vercel (frontend).
 - **Nivel en tecnologías:** fuerte en Node.js, TypeScript, TypeORM y Jest; maneja bien Java; básico en Spring Boot, C++ y frontend.
 - **Evento:** REDIS 2026; la otra persona de la foto está de acuerdo.
+- **Correo del backend:** Resend (no Nodemailer).
+- **Sprints:** ya no son línea de tiempo (se parecía a Formación); ahora barra segmentada + tarjetas numeradas.
 - **CV:** se publica con el teléfono 3102225646.
 
 ## Qué falta además

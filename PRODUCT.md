@@ -59,7 +59,7 @@ Arquitectura limpia, patrón adaptador, inyección de dependencias, pruebas con 
 - **Él hizo solo el backend.** El frontend de New Jahs (Tailwind CSS) es de otra persona: no atribuírselo.
 - Despliegue: backend y Redis en Railway, PostgreSQL en Neon, frontend en Vercel.
 - Stack: Node.js, TypeScript, PostgreSQL, TypeORM, Jest y Groq AI (chatbot).
-- Librerías del backend: Express, jsonwebtoken, bcryptjs, CORS, ioredis (Redis), Multer, Nodemailer, uuid; pruebas con Jest, ts-jest y Supertest; ESLint y Prettier; ts-node / ts-node-dev.
+- Librerías del backend: Express, jsonwebtoken, bcryptjs, CORS, ioredis (Redis), Multer, Resend (correo), uuid; pruebas con Jest, ts-jest y Supertest; ESLint y Prettier; ts-node / ts-node-dev.
 - Metodología **Scrumban** (no Scrum, aunque el póster diga SCRUM), 6 sprints. **Sprints 1–5 terminados; el sprint 6 (integración, pruebas y despliegue) está pendiente.**
   1. Análisis y diseño
   2. Autenticación (JWT), roles RBAC (minorista, mayorista, empleado, administrador) y catálogo

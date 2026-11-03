@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { mesesDesdeJunio2026 } from '../fechas'
 
 const piezas = [
@@ -61,21 +62,35 @@ export function NewJahs() {
       <p className="mt-2 text-niebla">
         {terminados} de {sprints.length} terminados.
       </p>
-      <ol className="mt-8 ml-[9px] border-l-4 border-cobalto pl-6">
+      {/* barra segmentada: un tramo por sprint, distinta a la línea de tiempo de Formación */}
+      <div aria-hidden className="mt-6 grid grid-cols-6 gap-1.5">
+        {sprints.map(([nombre], i) => (
+          <span key={nombre} className={`h-2 rounded-full ${i < terminados ? 'bg-cobalto' : 'bg-trazo'}`} />
+        ))}
+      </div>
+      <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {sprints.map(([nombre, frase], i) => {
           const hecho = i < terminados
           return (
-            <li key={nombre} className="relative pb-8 last:pb-0">
-              {/* parada: llena = terminado, hueca = pendiente */}
-              <span
-                aria-hidden
-                className={`absolute top-1.5 -left-[calc(1.5rem+11px)] size-[18px] rounded-full border-[3px] border-cobalto ${hecho ? 'bg-cobalto' : 'bg-noche'}`}
-              />
-              <p className={`text-sm font-semibold ${hecho ? 'text-niebla' : 'text-cobalto'}`}>
-                Sprint {i + 1} · {hecho ? 'terminado' : 'pendiente'}
-              </p>
-              <h4 className="mt-1 text-xl font-bold">{nombre}</h4>
-              <p className="max-w-[60ch] text-niebla">{frase}</p>
+            <li
+              key={nombre}
+              data-revelar
+              style={{ '--retraso': `${i * 80}ms` } as CSSProperties}
+              className={`rounded-capa border bg-plano p-5 ${hecho ? 'border-trazo' : 'border-dashed border-senal/60'}`}
+            >
+              <div className="flex items-baseline justify-between gap-4">
+                <span className={`text-4xl font-extrabold tracking-tight ${hecho ? 'text-cobalto' : 'text-senal'}`}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className={`text-sm font-semibold ${hecho ? 'text-niebla' : 'text-senal'}`}>
+                  {hecho ? 'Terminado' : 'Pendiente'}
+                </span>
+              </div>
+              <h4 className="mt-3 text-lg leading-snug font-bold">
+                <span className="sr-only">Sprint {i + 1}: </span>
+                {nombre}
+              </h4>
+              <p className="mt-1 text-niebla">{frase}</p>
             </li>
           )
         })}
