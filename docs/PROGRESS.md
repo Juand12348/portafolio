@@ -1,6 +1,6 @@
 # PROGRESS — Portafolio de Juan David Martínez Niño
 
-Última actualización: 1 de noviembre de 2026.
+Última actualización: 3 de noviembre de 2026.
 
 ## Dónde estamos
 
@@ -68,4 +68,4 @@ Piezas: `Navegacion.tsx` (barra que se desliza + menú bajo 1024 px), `Puntero.t
 
 ## Siguiente paso
 
-**Fase 5: New Jahs** con el estilo nuevo (revelado al hacer scroll, sprints animados) y resolver la pregunta de Eventos antes de la Fase 6.
+**3 nov 2026:** hechos Resend en el diagrama, sprints en tarjetas, Eventos en fila horizontal tipo Netflix, fondo de trazas tipo circuito con pulsos (reemplazó la cuadrícula; a él le gustó) y contacto por WhatsApp + "Copiar correo" (él probó que funciona). Falta: pie de página, revisar textos propuestos y el cierre (ver "Qué falta además").
