@@ -72,7 +72,7 @@ export function Formacion() {
   const lista = useAvance()
 
   return (
-    <section id="formacion" className="mx-auto max-w-7xl px-gutter py-section">
+    <section id="formacion" className="mx-auto max-w-7xl overflow-x-clip px-gutter py-section">
       <h2 data-revelar className="text-titulo font-extrabold md:text-center">
         Formación
       </h2>

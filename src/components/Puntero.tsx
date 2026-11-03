@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Anillo Cobalto que sigue al mouse y crece sobre lo clicable. El cursor nativo sigue visible.
-// También mueve --px/--py, que usa la cuadrícula iluminada del fondo.
+// También mueve --px/--py, que usa el circuito iluminado del fondo (Fondo.tsx).
 export function Puntero() {
   const anillo = useRef<HTMLDivElement>(null)
 

@@ -59,6 +59,17 @@
   }
 }
 
+/* Pulso que recorre una traza del fondo (pathLength 1000, guion de 40) y descansa antes de repetir. */
+@keyframes pulso {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  70%,
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
+
 /* flechas de dependencia: bajan hacia la capa interna */
 @keyframes fluir {
   0%,

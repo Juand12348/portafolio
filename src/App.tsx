@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Eventos } from './components/Eventos'
+import { Fondo } from './components/Fondo'
 import { Formacion } from './components/Formacion'
 import { Inicio } from './components/Inicio'
 import { Navegacion } from './components/Navegacion'
@@ -30,11 +31,7 @@ function App() {
 
   return (
     <>
-      <div aria-hidden className="cuadricula pointer-events-none fixed inset-0 -z-10 [--c:color-mix(in_oklab,var(--color-trazo)_55%,transparent)]" />
-      <div
-        aria-hidden
-        className="cuadricula pointer-events-none fixed inset-0 -z-10 [--c:color-mix(in_oklab,var(--color-cobalto)_35%,transparent)] [mask-image:radial-gradient(circle_260px_at_var(--px,-999px)_var(--py,-999px),black,transparent)]"
-      />
+      <Fondo />
       <Puntero />
       <a
         href="#contenido"
