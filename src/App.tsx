@@ -5,6 +5,7 @@ import { Formacion } from './components/Formacion'
 import { Inicio } from './components/Inicio'
 import { Navegacion } from './components/Navegacion'
 import { NewJahs } from './components/NewJahs'
+import { Pie } from './components/Pie'
 import { Puntero } from './components/Puntero'
 import { Tecnologias } from './components/Tecnologias'
 
@@ -49,6 +50,7 @@ function App() {
         <NewJahs />
         <Eventos />
       </main>
+      <Pie />
     </>
   )
 }

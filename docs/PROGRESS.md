@@ -61,11 +61,11 @@ Piezas: `Navegacion.tsx` (barra que se desliza + menú bajo 1024 px), `Puntero.t
 
 ## Qué falta además
 
-- **Revisar textos propuestos por Claude:** frase del inicio, textos de cada capa del diagrama, las 7 frases de "Cómo construyo software", textos de New Jahs y la frase de Eventos.
+- **Revisar textos propuestos por Claude:** frase del inicio, textos de cada capa del diagrama, las 7 frases de "Cómo construyo software", textos de New Jahs la frase de Eventos, el mensaje de WhatsApp y el pie ("¿Construimos algo juntos?" y su frase).
 - **Niveles sin confirmar:** JavaScript, NestJS, MySQL, PostgreSQL, Docker.
 - **Originales pesados en `public/`:** `foto-perfil.jpg` (8 MB, sin commitear) y `feria-redis-2026.jpg` (1,3 MB) ya no se usan (el sitio usa las versiones WebP) pero se copian al build; pedir permiso para borrarlos o moverlos.
 - **Cierre:** crítica de diseño y accesibilidad, quitar un elemento, `DESIGN.md`, tokens en el README, Lighthouse, merge y despliegue en Vercel.
 
 ## Siguiente paso
 
-**3 nov 2026:** hechos Resend en el diagrama, sprints en tarjetas, Eventos en fila horizontal tipo Netflix, fondo de trazas tipo circuito con pulsos (reemplazó la cuadrícula; a él le gustó) y contacto por WhatsApp + "Copiar correo" (él probó que funciona). Falta: pie de página, revisar textos propuestos y el cierre (ver "Qué falta además").
+**3 nov 2026:** hechos Resend en el diagrama, sprints en tarjetas, Eventos en fila horizontal tipo Netflix, fondo de trazas tipo circuito con pulsos (reemplazó la cuadrícula; a él le gustó) y contacto por WhatsApp + "Copiar correo" (él probó que funciona). Pie de página hecho (contacto, enlaces, crédito; sin "Ahora mismo" porque falta saber qué está aprendiendo). Falta: él revisa textos propuestos y el cierre (ver "Qué falta además").

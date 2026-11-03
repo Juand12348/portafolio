@@ -1,16 +1,6 @@
-import { useState } from 'react'
 import { mesesDesdeJunio2026 } from '../fechas'
+import { boton, CopiarCorreo, cv, enlace, github, linkedin, whatsapp } from './Contacto'
 import { Diagrama } from './Diagrama'
-
-// Subrayado que se dibuja de izquierda a derecha al pasar el mouse.
-const enlace =
-  'relative font-semibold after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-cobalto hover:after:scale-x-100 motion-safe:after:transition-transform motion-safe:after:duration-500 motion-safe:after:ease-out-expo'
-
-const correo = 'juandavidmn0819@gmail.com'
-// Mensaje que ya aparece escrito al abrir el chat (propuesto por Claude; él puede cambiarlo).
-const whatsapp = `https://wa.me/573102225646?text=${encodeURIComponent('Hola Juan David, vi tu portafolio y me gustaría hablar contigo.')}`
-
-const boton = 'inline-flex min-h-12 items-center rounded-md px-5 font-semibold motion-safe:transition-[background-color,color,translate] motion-safe:duration-300 active:translate-y-px'
 
 // Cada línea del nombre sube desde detrás de su propio borde.
 function Linea({ texto, retraso }: { texto: string; retraso: number }) {
@@ -28,18 +18,6 @@ function Linea({ texto, retraso }: { texto: string; retraso: number }) {
 
 export function Inicio() {
   const meses = mesesDesdeJunio2026()
-  const [copiado, setCopiado] = useState<'no' | 'si' | 'error'>('no')
-
-  // mailto no abre nada si no hay app de correo configurada; copiar sirve con cualquier proveedor.
-  async function copiarCorreo() {
-    try {
-      await navigator.clipboard.writeText(correo)
-      setCopiado('si')
-    } catch {
-      setCopiado('error') // sin permiso de portapapeles: se muestra el correo para copiarlo a mano
-    }
-    setTimeout(() => setCopiado('no'), 2500)
-  }
 
   return (
     <section
@@ -84,20 +62,11 @@ export function Inicio() {
             </a>
           </li>
           <li>
-            <button
-              type="button"
-              onClick={copiarCorreo}
-              className={`${boton} border border-cobalto hover:bg-cobalto hover:text-noche`}
-            >
-              {copiado === 'si' ? '¡Copiado!' : copiado === 'error' ? correo : 'Copiar correo'}
-            </button>
-            <span role="status" className="sr-only">
-              {copiado === 'si' ? `Correo ${correo} copiado` : ''}
-            </span>
+            <CopiarCorreo />
           </li>
           <li>
             <a
-              href="/cv/CV_Juan_David_Martinez_Nino.pdf"
+              href={cv}
               download
               className={`${boton} border border-cobalto hover:bg-cobalto hover:text-noche`}
             >
@@ -105,12 +74,12 @@ export function Inicio() {
             </a>
           </li>
           <li>
-            <a className={enlace} href="https://www.linkedin.com/in/juan-david-mart%C3%ADnez-ni%C3%B1o-879b89323/" target="_blank" rel="noopener noreferrer">
+            <a className={enlace} href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn<span className="sr-only"> (abre en pestaña nueva)</span>
             </a>
           </li>
           <li>
-            <a className={enlace} href="https://github.com/Juand12348" target="_blank" rel="noopener noreferrer">
+            <a className={enlace} href={github} target="_blank" rel="noopener noreferrer">
               GitHub<span className="sr-only"> (abre en pestaña nueva)</span>
             </a>
           </li>

@@ -1,11 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-
-const secciones = [
-  { id: 'tecnologias', nombre: 'Tecnologías' },
-  { id: 'formacion', nombre: 'Formación' },
-  { id: 'new-jahs', nombre: 'New Jahs' },
-  { id: 'eventos', nombre: 'Eventos' },
-]
+import { secciones } from '../secciones'
 
 // La sección activa es la que cruza la franja central de la pantalla.
 function useSeccionActiva() {
